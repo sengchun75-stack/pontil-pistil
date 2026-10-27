@@ -1,7 +1,7 @@
 /* Renders the social card, logo mark and touch icon from tools/social.html.
  *
  * usage: node social.mjs <template-folder> <base-url>
- *   e.g. node social.mjs ../ http://localhost:8123
+ *   e.g. node social.mjs ../docs/ http://localhost:8123
  * needs: playwright-core and a Chromium to point it at (CHROMIUM env var); install
  * them next to a working copy of this file, templates carry no package.json.
  */
