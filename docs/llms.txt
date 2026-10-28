@@ -5,9 +5,9 @@
 ## Pages
 
 - [Home](https://pontil-pistil.pages.dev/): one lily shown as the living flower, a scan and cast glass, with a named anatomy, an eleven-week process and five questions answered.
-- [Specimens](https://pontil-pistil.pages.dev/specimens.html): eight glass models in progress, with family, flowering month, scale and bench weeks.
-- [Glass flowers](https://pontil-pistil.pages.dev/glass-flowers.html): the Blaschka glass flowers at Harvard, who made them, how many exist and how they were made.
-- [Anatomy of a lily](https://pontil-pistil.pages.dev/anatomy-of-a-lily.html): tepals, stamens, anthers, filaments, stigma, style and ovary on one specimen.
+- [Specimens](https://pontil-pistil.pages.dev/specimens): eight glass models in progress, with family, flowering month, scale and bench weeks.
+- [Glass flowers](https://pontil-pistil.pages.dev/glass-flowers): the Blaschka glass flowers at Harvard, who made them, how many exist and how they were made.
+- [Anatomy of a lily](https://pontil-pistil.pages.dev/anatomy-of-a-lily): tepals, stamens, anthers, filaments, stigma, style and ovary on one specimen.
 
 ## Facts that are stated on the site
 
