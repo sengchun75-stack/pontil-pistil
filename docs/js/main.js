@@ -58,7 +58,7 @@
     var d = target - phase;
     if (reduced || Math.abs(d) < 0.0015) { phase = target; ticking = false; } else { phase += d * 0.13; }
     if (rel) rel.setPhase(phase);
-    followPhase();
+    if (lockY === null) followPhase();   // a state picked by hand stays put until the visitor scrolls
     if (ticking) requestAnimationFrame(tick);
   }
   function setTarget(t) {
