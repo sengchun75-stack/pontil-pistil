@@ -5,6 +5,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  ! Access-Control-Allow-Origin
 
 /img/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
@@ -17,3 +18,27 @@
 
 /js/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/specimens
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/glass-flowers
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/anatomy-of-a-lily
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/404
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/llms.txt
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/robots.txt
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/sitemap.xml
+  Cache-Control: no-cache, no-store, must-revalidate
