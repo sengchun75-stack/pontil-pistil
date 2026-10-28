@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sengchun75-stack.github.io/pontil-pistil/sitemap.xml
+Sitemap: https://pontil-pistil.pages.dev/sitemap.xml
