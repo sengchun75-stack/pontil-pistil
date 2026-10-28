@@ -4,6 +4,13 @@
 (function () {
   'use strict';
 
+  /* If another site frames this page, hide it and try to take the whole window back. */
+  if (window.top !== window.self) {
+    document.documentElement.style.display = 'none';
+    try { window.top.location = window.self.location; } catch (e) { /* blocked: the page stays hidden */ }
+    return;
+  }
+
   var root = document.documentElement;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isHome = root.getAttribute('data-page') === 'home';
@@ -59,7 +66,7 @@
     if (!ticking) { ticking = true; requestAnimationFrame(tick); }
   }
 
-  /* scroll position on the pinned hero -> where the front has got to */
+  /* scroll position on the pinned hero sets how far the front has travelled */
   function ease(x) { return x * x * (3 - 2 * x); }
   function scrollPhase() {
     var r = hero.getBoundingClientRect();
@@ -178,7 +185,7 @@
     if (poster && !poster.complete) poster.addEventListener('load', go, { once: true }); else go();
   }
 
-  /* iOS asks before it shares the gyroscope, and only from a tap */
+  /* iOS asks first before sharing the gyroscope, and only after a tap */
   var tiltBtn = document.getElementById('tilt-btn');
   var DOE = window.DeviceOrientationEvent;
   if (tiltBtn && DOE && typeof DOE.requestPermission === 'function' && window.matchMedia('(pointer: coarse)').matches && !reduced) {

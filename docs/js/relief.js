@@ -1,7 +1,7 @@
 /* Relief renderer: one photograph and its baked depth map, drawn as a displaced
    mesh that tilts with the pointer or the device. The same vertices are drawn
    twice - as a surface (living photograph, then cast glass) and as points (the
-   scan) - and a radial front, travelling out from the flower's throat, decides
+   scan) - and a radial front, travelling out of the flower's throat, decides
    which of the three a given pixel belongs to at a given phase.
 
    phase 0 = living, 1 = scan, 2 = glass. Everything between is the front.
@@ -13,7 +13,7 @@
   'use strict';
 
   var GRID_X = 220, GRID_Y = 165;
-  var THROAT = [0.487, 0.585];        // where the six tepals meet, in image uv (v up)
+  var THROAT = [0.487, 0.585];        // the point at which the six tepals meet, in image uv (v up)
   var DEPTH = 0.19;                   // relief height as a fraction of image width
   var MID = 0.42;                     // depth value that stays on the picture plane
   var PERSP = 0.30;
@@ -110,7 +110,7 @@
     '  vec3 live = ph.rgb * (1.0 + 0.9 * (dot(n, key) - dot(n0, key)));',
 
     // cast glass. Thick near the throat, thin toward the tips: thin glass is paler and lets the
-    // page show through, thick glass is deeper and denser. The silhouette is found from the
+    // page show through, thick glass is deeper and denser. The silhouette is read off the
     // photograph's own coverage, so the rim is a hairline on the true edge.
     '  float ndv = max(n.z, 0.0);',
     '  float fres = pow(1.0 - ndv, 3.2);',
@@ -184,7 +184,7 @@
     '}'
   ].join('\n');
 
-  // Depth-only pass: where the displaced mesh folds over itself, a translucent surface would be blended
+  // Depth-only pass: wherever the displaced mesh folds over itself, a translucent surface would be blended
   // twice and show as thin bright rows. Writing depth first lets only the nearest layer reach the colour pass.
   var FRAG_DEPTH = [
     '#version 300 es',
@@ -322,7 +322,7 @@
       return (a * (1 - fx) + b * fx) * (1 - fy) + (c * (1 - fx) + d * fx) * fy;
     }
 
-    // where a point of the photograph (u across, v down) sits on screen right now, in stage fractions
+    // the screen position of a photograph point (u across, v down) at this moment, in stage fractions
     function anchor(u, vDown) {
       var v = 1 - vDown;
       var d = cpuDepth ? sampleDepth(u, v) : MID;
